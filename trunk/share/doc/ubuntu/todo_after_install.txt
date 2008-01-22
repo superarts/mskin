@@ -1,0 +1,9 @@
+Setting official apt source:
+http://www.ubuntulinux.nl/source-o-matic
+
+Apply / update current packages with the new source:
+# sudo apt-get update
+# sudo apt-get dist-upgrade
+
+Fix the 'failed to write cache' issue:
+sudo fc-cache -fv 2>&1 | grep failed | cut -f1 -d":" | xargs -i sudo touch {} && sudo fc-cache -fv
